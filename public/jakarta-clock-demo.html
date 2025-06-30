@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jam Indonesia Jakarta - RasaBeauty Bar</title>
+    <link rel="shortcut icon" type="image/png" href="images/rasa.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .clock-container {
+            margin: 20px 0;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            max-width: 600px;
+            color: white;
+            text-align: center;
+        }
+        
+        .info h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .info ul {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .info li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .info li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🕐 Jam Indonesia Jakarta</h1>
+        <p>Waktu Indonesia Barat (WIB) - Real Time</p>
+    </div>
+    
+    <div class="clock-container">
+        <div id="jakarta-clock" class="jakarta-clock"></div>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="toggleFormat()">Toggle 12/24 Hour</button>
+        <button class="btn" onclick="toggleSeconds()">Toggle Seconds</button>
+        <button class="btn" onclick="setTheme('pink')">Pink Theme</button>
+        <button class="btn" onclick="setTheme('dark')">Dark Theme</button>
+        <button class="btn" onclick="setTheme('minimal')">Minimal Theme</button>
+        <button class="btn" onclick="setTheme('neon')">Neon Theme</button>
+        <button class="btn active" onclick="setTheme('default')">Default Theme</button>
+    </div>
+    
+    <div class="info">
+        <h3>📍 Informasi Zona Waktu</h3>
+        <ul>
+            <li>Zona Waktu: Waktu Indonesia Barat (WIB)</li>
+            <li>UTC Offset: +7 jam</li>
+            <li>Wilayah: Jakarta, Bandung, Medan, Palembang</li>
+            <li>Update: Real-time setiap detik</li>
+            <li>Format: 12/24 jam (dapat diubah)</li>
+            <li>Bahasa: Indonesia / English</li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <p>Dibuat untuk <a href="/">RasaBeauty Bar</a> | © 2024</p>
+    </div>
+    
+    <script src="js/jakarta-clock.js"></script>
+    <script>
+        let currentTheme = 'default';
+        
+        function toggleFormat() {
+            if (window.jakartaClock) {
+                window.jakartaClock.setFormat(!window.jakartaClock.options.format24);
+            }
+        }
+        
+        function toggleSeconds() {
+            if (window.jakartaClock) {
+                window.jakartaClock.toggleSeconds();
+            }
+        }
+        
+        function setTheme(theme) {
+            if (window.jakartaClock) {
+                currentTheme = theme;
+                
+                // Remove active class from all buttons
+                document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                event.target.classList.add('active');
+                
+                if (theme === 'default') {
+                    document.getElementById('jakarta-clock').className = 'jakarta-clock';
+                } else {
+                    window.jakartaClock.setTheme(theme);
+                }
+            }
+        }
+        
+        // Initialize clock when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Clock will be auto-initialized by the script
+            console.log('Jakarta Clock initialized');
+        });
+        
+        // Add some interactive features
+        document.getElementById('jakarta-clock').addEventListener('click', function() {
+            this.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+    </script>
+</body>
+</html>

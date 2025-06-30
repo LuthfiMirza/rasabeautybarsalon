@@ -35,22 +35,21 @@
                     <ul>
                         <li class="link-animate"><a href="/">HOME</a></li>
                         <li class="link-animate"><a href="/about">ABOUT</a></li>
-                        <!-- <li class="link-animate"><a href="/#servicesID">SERVICES</a></li>
-                        <li class="link-animate"><a href="/#contactID">CONTACT</a></li> -->
+                        <li class="link-animate"><a href="/#servicesID">SERVICES</a></li>
+                        <li class="link-animate"><a href="/#contactID">CONTACT</a></li>
                         <li><a href="/book" class="btn btn-blue">RESERVATION</a></li>
                     </ul>
-                    
                 </nav>
 
-<nav class="mobile-nav">
-    <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/about">ABOUT</a></li>
-        <!-- <li><a href="/#servicesID">SERVICES</a></li> -->
-        <!-- <li><a href="/#contactID">CONTACT</a></li> -->
-        <li><a href="/book" class="btn btn-blue">RESERVATION</a></li>
-    </ul>
-</nav>
+                <nav class="mobile-nav">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/about">ABOUT</a></li>
+                        <li><a href="/#servicesID">SERVICES</a></li>
+                        <li><a href="/#contactID">CONTACT</a></li>
+                        <li><a href="/book" class="btn btn-blue">RESERVATION</a></li>
+                    </ul>
+                </nav>
             </div>
            
         </header>
@@ -347,108 +346,17 @@
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
         
-<style>
-.service-item {
-    position: relative;
-    padding: 40px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.service-item:nth-child(odd) {
-    background: #E8F4F8;
-}
-
-.service-item:nth-child(even) {
-    background: #FFF0F5;
-}
-
-.table-wrap {
-    display: none;
-    margin: 20px 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-
-.service-item.expanded .table-wrap {
-    display: block;
-}
-
-/* Style untuk tabel */
-.blue-table, .gray-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.blue-table td, .gray-table td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-/* Mengatur kolom harga ke kanan */
-.blue-table td:last-child, .gray-table td:last-child {
-    text-align: right;
-    width: 100px; /* Lebar tetap untuk kolom harga */
-}
-
-/* Style untuk tombol */
-.read-more-btn, .service-btn {
-    background: transparent;
-    border: none;
-    color: #666;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: block;
-    width: 120px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.read-more-btn:hover, .service-btn:hover {
-    color: #F987C4;
-}
-.service-modal-close:hover {
-    transform: scale(1.1);
-}
-.service-modal .table-wrap {
-    margin: 20px 0;
-}
-    .mobile-nav {
-    display: none; /* Default state */
-    transition: display 0.3s ease; /* Animasi smooth */
-}
-.menu {
-    cursor: pointer;
-}
-</style>
 
 <script>
-   document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const menuButton = document.querySelector('.menu');
     const mobileNav = document.querySelector('.mobile-nav');
-    const navOverlay = document.querySelector('.nav-overlay');
     const body = document.body;
 
     // Fungsi untuk toggle menu
     function toggleMenu() {
-        if (mobileNav.style.display === 'none' || !mobileNav.style.display) {
-            mobileNav.style.display = 'block';
-            setTimeout(() => {
-                mobileNav.classList.add('active');
-                navOverlay.classList.add('active');
-                body.style.overflow = 'hidden';
-            }, 10);
-        } else {
-            mobileNav.classList.remove('active');
-            navOverlay.classList.remove('active');
-            body.style.overflow = '';
-            setTimeout(() => {
-                mobileNav.style.display = 'none';
-            }, 300);
-        }
+        mobileNav.classList.toggle('active');
+        body.classList.toggle('menu-open');
     }
 
     // Event listener untuk tombol menu
@@ -457,18 +365,31 @@
         e.stopPropagation();
         toggleMenu();
     });
-    // Event listener untuk link di mobile nav
+
+    // Event listener untuk link di mobile nav - tutup menu saat link diklik
     const mobileNavLinks = mobileNav.querySelectorAll('a');
     mobileNavLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
+        link.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
     });
 
-    // Tutup menu saat klik di luar
+    // Tutup menu saat klik di luar area menu
     document.addEventListener('click', function(e) {
         if (mobileNav.classList.contains('active') && 
             !mobileNav.contains(e.target) && 
             !menuButton.contains(e.target)) {
-            toggleMenu();
+            mobileNav.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
+
+    // Tutup menu saat window di-resize ke desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1024) {
+            mobileNav.classList.remove('active');
+            body.classList.remove('menu-open');
         }
     });
 });

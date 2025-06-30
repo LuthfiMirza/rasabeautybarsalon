@@ -1,33 +1,202 @@
 /* showcase/header */
 .other-showcase {
-    
-        width: 100%;
-        height: 55px;
-        background-color: rgba(243, 114, 178, 0.616); /* pink transparan */
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9998; /* pastikan cukup tinggi agar muncul di atas konten */
-    }
-    
+    width: 100%;
+    height: 55px;
+    background-color: rgba(243, 114, 178, 0.616); /* pink transparan */
+    position: relative;
+    z-index: 9998; /* pastikan cukup tinggi agar muncul di atas konten */
+}
 
+.other-showcase header {
+    height: 55px;
+    background-color: rgba(243, 114, 178, 0.616);
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    transition: 0.5s all;
+    top: 0;
+}
 
+.other-showcase header .header-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* section divider */
+/* Desktop Navigation for other pages */
+.other-showcase .desktop-nav {
+    display: none;
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+.other-showcase .desktop-nav ul {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    list-style: none;
+}
+
+.other-showcase .desktop-nav ul li {
+    display: inline-block;
+    padding: 15px 15px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 0 5px;
+}
+
+.other-showcase .desktop-nav ul li a {
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+
+.other-showcase .desktop-nav ul li .btn-blue {
+    padding: 0.7em 1.5em;
+    background-color: #d80073;
+    border-radius: 4px;
+}
+
+/* Mobile menu button for other pages - FIXED POSITIONING */
+.other-showcase .menu {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 10001;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.other-showcase .menu:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.other-showcase .menu img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* Mobile Navigation for other pages */
+.other-showcase .mobile-nav {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -280px;
+    z-index: 10000;
+    background-color: rgba(255, 192, 249, 0.98);
+    backdrop-filter: blur(8px);
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.other-showcase .mobile-nav.active {
+    left: 0;
+}
+
+.other-showcase .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.other-showcase .mobile-nav ul li {
+    padding: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.other-showcase .mobile-nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 18px 25px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.other-showcase .mobile-nav ul li a:hover {
+    color: #d80073;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: 30px;
+}
+
+.other-showcase .mobile-nav ul li a.btn {
+    background-color: #d80073;
+    color: white;
+    margin: 15px 25px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.other-showcase .mobile-nav ul li a.btn:hover {
+    background-color: #b8005f;
+    padding-left: 20px;
+}
+
+/* section divider - STICK TO NAV */
+.section-divider {
+    height: 60px;
+    background-color: #f8f8f8;
+    margin-top: 55px; /* Stick directly to fixed header */
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+    position: relative;
+    z-index: 9997;
+}
+
+.section-divider div {
+    width: 100%;
+}
 
 .section-divider h3 {
     margin-left: 5%;
     font-weight: lighter;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
 }
+
 .section-divider h3 span a {
     color: #90f1f8;
     font-size: 13px;
+    text-decoration: none;
 }
+
 .section-divider h3 span:nth-child(2) {
     color: #90f1f8;
     margin: 0px 7px;
 }
+
 .section-divider h3 span:nth-child(3) {
     color: #f876a8;
     font-size: 20px;
@@ -176,6 +345,26 @@ fieldset {
 }
 
 /* media queries */
+@media screen and (max-width: 768px) {
+    /* Mobile hamburger improvements */
+    .other-showcase .menu {
+        top: 8px;
+        right: 8px;
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .other-showcase .menu:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .other-showcase .menu img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
 @media screen and (min-width: 375px) {
     .staff-profile img {
         width: 325px;
@@ -217,7 +406,43 @@ fieldset {
         width: 596px;
     }
 }
+
+/* Responsive design for desktop navigation */
 @media screen and (min-width: 1024px) {
+    .other-showcase .menu {
+        display: none !important;
+    }
+    
+    .other-showcase .mobile-nav {
+        display: none !important;
+    }
+    
+    .other-showcase .desktop-nav {
+        display: block !important;
+    }
+    
+    .other-showcase .desktop-nav ul li .link-animate {
+        position: relative;
+    }
+    
+    .other-showcase .desktop-nav ul li .link-animate::before {
+        content: "";
+        background: #ffffff;
+        position: absolute;
+        height: 2px;
+        width: 0;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .other-showcase .desktop-nav ul li .link-animate:hover::before {
+        opacity: 1;
+        width: 70%;
+    }
+
     /* about */
     .about-main .grid-wrap {
         position: relative;

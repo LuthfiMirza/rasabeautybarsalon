@@ -1,0 +1,19 @@
+/* Additional styles for other pages */
+
+/* Background for other pages showcase */
+.showcase:not(:has(.fade)) {
+    background: linear-gradient(135deg, #f9c1e1 0%, #d80073 100%);
+}
+
+/* Media queries for page title */
+@media screen and (min-width: 768px) {
+    .page-title h1 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .page-title h1 {
+        font-size: 55px;
+    }
+}

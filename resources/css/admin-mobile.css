@@ -1,0 +1,203 @@
+/* Mobile Responsive Improvements for Admin Dashboard */
+
+/* Global Mobile Styles */
+@media (max-width: 640px) {
+    /* Widget Container Improvements */
+    .fi-wi {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Stats Overview Widget */
+    .fi-wi-stats-overview {
+        gap: 0.75rem !important;
+    }
+    
+    .fi-wi-stats-overview-stat {
+        padding: 0.75rem !important;
+        min-height: auto !important;
+    }
+    
+    .fi-wi-stats-overview-stat-value {
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .fi-wi-stats-overview-stat-description {
+        font-size: 0.75rem !important;
+        line-height: 1rem !important;
+    }
+    
+    .fi-wi-stats-overview-stat-icon {
+        width: 1rem !important;
+        height: 1rem !important;
+    }
+    
+    /* Chart Widgets */
+    .fi-wi-chart {
+        height: 250px !important;
+        padding: 0.75rem !important;
+    }
+    
+    .fi-wi-chart-heading {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* Chart Filter Buttons */
+    .fi-wi-chart .fi-tabs {
+        gap: 0.25rem !important;
+    }
+    
+    .fi-wi-chart .fi-tabs-item {
+        padding: 0.375rem 0.5rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    /* Table Widget */
+    .fi-wi-table {
+        overflow-x: auto !important;
+    }
+    
+    .fi-ta-table {
+        font-size: 0.75rem !important;
+        min-width: 100% !important;
+    }
+    
+    .fi-ta-header-cell,
+    .fi-ta-cell {
+        padding: 0.5rem 0.25rem !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Hide less important columns on mobile */
+    .fi-ta-table .fi-ta-cell:nth-child(n+5),
+    .fi-ta-table .fi-ta-header-cell:nth-child(n+5) {
+        display: none !important;
+    }
+    
+    /* Action buttons in table */
+    .fi-ta-actions {
+        gap: 0.25rem !important;
+    }
+    
+    .fi-ta-action {
+        padding: 0.25rem !important;
+    }
+    
+    /* Badge improvements */
+    .fi-badge {
+        font-size: 0.625rem !important;
+        padding: 0.125rem 0.375rem !important;
+    }
+    
+    /* Widget Headers */
+    .fi-wi-header {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .fi-wi-heading {
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .fi-wi-chart {
+        height: 300px !important;
+    }
+    
+    .fi-wi-stats-overview-stat {
+        padding: 1rem !important;
+    }
+    
+    .fi-ta-table {
+        font-size: 0.875rem !important;
+    }
+    
+    .fi-ta-header-cell,
+    .fi-ta-cell {
+        padding: 0.75rem 0.5rem !important;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 640px) {
+    button, 
+    .fi-btn,
+    .fi-ta-action,
+    .fi-tabs-item {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    /* Improve form inputs */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+}
+
+/* Loading states */
+.fi-wi[wire\\:loading] {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Scrollbar improvements for mobile */
+@media (max-width: 640px) {
+    .fi-wi-table::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .fi-wi-table::-webkit-scrollbar-track {
+        background: #f1f5f9;
+    }
+    
+    .fi-wi-table::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 2px;
+    }
+}
+
+/* Dark mode adjustments */
+.dark .fi-wi-stats-overview-stat {
+    background-color: rgb(31 41 55) !important;
+    border-color: rgb(55 65 81) !important;
+}
+
+.dark .fi-wi-chart {
+    background-color: rgb(31 41 55) !important;
+    border-color: rgb(55 65 81) !important;
+}
+
+/* Animation improvements for mobile */
+@media (max-width: 640px) {
+    .fi-wi {
+        transition: all 0.2s ease !important;
+    }
+    
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+        .fi-wi,
+        .fi-wi-stats-overview-stat,
+        .fi-wi-chart {
+            transition: none !important;
+            animation: none !important;
+        }
+    }
+}
+
+/* Print styles */
+@media print {
+    .fi-wi-chart {
+        height: auto !important;
+        page-break-inside: avoid;
+    }
+    
+    .fi-wi-table {
+        overflow: visible !important;
+    }
+}

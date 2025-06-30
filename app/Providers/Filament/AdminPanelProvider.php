@@ -27,18 +27,25 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('RasaBeauty Bar Admin')
+            ->brandLogo(asset('images/rasa.png'))
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Pink,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                \App\Filament\Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
+                \App\Filament\Widgets\CustomerAnalyticsOverview::class,
+                \App\Filament\Widgets\CustomerInsightsWidget::class,
+                \App\Filament\Widgets\ReservationChart::class,
+                \App\Filament\Widgets\ServicePopularityChart::class,
+                \App\Filament\Widgets\PeakHoursChart::class,
+                \App\Filament\Widgets\RecentReservationsWidget::class,
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

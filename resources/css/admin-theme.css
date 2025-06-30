@@ -1,0 +1,206 @@
+/* Theme-aware styles for admin dashboard */
+
+/* Ensure all custom elements respond to theme changes */
+.theme-aware-card {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-aware-text {
+    @apply text-gray-900 dark:text-gray-100;
+    transition: color 0.2s ease;
+}
+
+.theme-aware-text-muted {
+    @apply text-gray-600 dark:text-gray-400;
+    transition: color 0.2s ease;
+}
+
+.theme-aware-icon-bg {
+    transition: background-color 0.2s ease;
+}
+
+.theme-aware-icon-bg.blue {
+    @apply bg-blue-100 dark:bg-blue-900/30;
+}
+
+.theme-aware-icon-bg.green {
+    @apply bg-green-100 dark:bg-green-900/30;
+}
+
+.theme-aware-icon-bg.yellow {
+    @apply bg-yellow-100 dark:bg-yellow-900/30;
+}
+
+.theme-aware-icon-bg.purple {
+    @apply bg-purple-100 dark:bg-purple-900/30;
+}
+
+.theme-aware-icon {
+    transition: color 0.2s ease;
+}
+
+.theme-aware-icon.blue {
+    @apply text-blue-600 dark:text-blue-400;
+}
+
+.theme-aware-icon.green {
+    @apply text-green-600 dark:text-green-400;
+}
+
+.theme-aware-icon.yellow {
+    @apply text-yellow-600 dark:text-yellow-400;
+}
+
+.theme-aware-icon.purple {
+    @apply text-purple-600 dark:text-purple-400;
+}
+
+/* Widget specific theme improvements */
+.fi-wi-stats-overview-stat {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.fi-wi-chart {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.fi-wi-table {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Table specific theme improvements */
+.fi-ta-table {
+    @apply bg-white dark:bg-gray-800;
+}
+
+.fi-ta-header-cell {
+    @apply bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100;
+}
+
+.fi-ta-cell {
+    @apply text-gray-900 dark:text-gray-100;
+}
+
+/* Badge theme improvements */
+.fi-badge {
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+/* Button theme improvements */
+.fi-btn {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Tab theme improvements */
+.fi-tabs-item {
+    @apply text-gray-600 dark:text-gray-400;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+.fi-tabs-item[aria-selected="true"] {
+    @apply text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700;
+}
+
+/* Form theme improvements */
+.fi-input {
+    @apply bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+}
+
+/* Modal theme improvements */
+.fi-modal-content {
+    @apply bg-white dark:bg-gray-800;
+    transition: background-color 0.2s ease !important;
+}
+
+/* Notification theme improvements */
+.fi-no-notification {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Dropdown theme improvements */
+.fi-dropdown-panel {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Sidebar theme improvements */
+.fi-sidebar {
+    @apply bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Navigation theme improvements */
+.fi-sidebar-nav-item {
+    @apply text-gray-600 dark:text-gray-400;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+.fi-sidebar-nav-item:hover {
+    @apply text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700;
+}
+
+.fi-sidebar-nav-item[aria-current="page"] {
+    @apply text-gray-900 dark:text-gray-100 bg-gray-100 dark:bg-gray-700;
+}
+
+/* Loading spinner theme improvements */
+.fi-loading-indicator {
+    @apply text-gray-400 dark:text-gray-500;
+    transition: color 0.2s ease !important;
+}
+
+/* Scrollbar theme improvements */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-700;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Focus improvements for accessibility */
+.fi-btn:focus,
+.fi-input:focus,
+.fi-tabs-item:focus {
+    @apply ring-2 ring-pink-500 dark:ring-pink-400 ring-offset-2 dark:ring-offset-gray-800;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .fi-wi-stats-overview-stat,
+    .fi-wi-chart,
+    .fi-wi-table {
+        border-width: 2px !important;
+    }
+    
+    .fi-btn {
+        border-width: 2px !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .fi-wi-stats-overview-stat,
+    .fi-wi-chart,
+    .fi-wi-table {
+        background: white !important;
+        color: black !important;
+        border: 1px solid black !important;
+    }
+}
