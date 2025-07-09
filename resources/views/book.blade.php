@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>RasaBeauty Bar | Reservation</title>
+        <title>RasaBeauty Bar | Reservasi</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/styles.css">
@@ -21,8 +21,10 @@
         <div class="other-showcase" id="showcaseID">
             <header>
                 <div class="container-lg header-container">
+                    <!-- Logo -->
                     <a href="/" class="cursor-pointer logo">
-                        <!-- Logo space if needed -->
+                        <img src="images/rasa.png" alt="RasaBeauty Bar Logo">
+                        <span>RasaBeauty<br><i>Bar</i></span>
                     </a>
                     
                     <!-- Mobile Menu Button -->
@@ -33,22 +35,22 @@
                     <!-- Desktop Navigation -->
                     <nav class="oswald-sans desktop-nav vertical-center">
                         <ul>
-                            <li class="link-animate"><a href="/">HOME</a></li>
-                            <li class="link-animate"><a href="/about">ABOUT</a></li>
-                            <li class="link-animate"><a href="/#servicesID">SERVICES</a></li>
-                            <li class="link-animate"><a href="/#contactID">CONTACT</a></li>
-                            <li><a href="/book" class="btn btn-blue">RESERVATION</a></li>
+                            <li class="link-animate"><a href="/">BERANDA</a></li>
+                            <li class="link-animate"><a href="/about">TENTANG</a></li>
+                            <li class="link-animate"><a href="/#servicesID">LAYANAN</a></li>
+                            <li class="link-animate"><a href="/#contactID">KONTAK</a></li>
+                            <li><a href="/book" class="btn btn-blue">RESERVASI</a></li>
                         </ul>
                     </nav>
 
                     <!-- Mobile Navigation -->
                     <nav class="mobile-nav">
                         <ul>
-                            <li><a href="/">HOME</a></li>
-                            <li><a href="/about">ABOUT</a></li>
-                            <li><a href="/#servicesID">SERVICES</a></li>
-                            <li><a href="/#contactID">CONTACT</a></li>
-                            <li><a href="/book" class="btn btn-blue">RESERVATION</a></li>
+                            <li><a href="/">BERANDA</a></li>
+                            <li><a href="/about">TENTANG</a></li>
+                            <li><a href="/#servicesID">LAYANAN</a></li>
+                            <li><a href="/#contactID">KONTAK</a></li>
+                            <li><a href="/book" class="btn btn-blue">RESERVASI</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -59,9 +61,9 @@
         <div class="section-divider">
             <div>
                 <h3 class="oswald-sans">
-                    <span><a href="/">HOME</a></span>
+                    <span><a href="/">BERANDA</a></span>
                     <span>\</span>
-                    <span>RESERVATION</span>
+                    <span>RESERVASI</span>
                 </h3>
             </div>
         </div>
@@ -74,7 +76,7 @@
             <span class="submit-message"></span>
 
             <div class="book-form">
-                <h1 class="text-white open-sans text-center">Reservation Form</h1>
+                <h1 class="text-white open-sans text-center">Form Reservasi</h1>
                 <form 
                     id="bookingForm"
                     class="open-sans grid-wrap"
@@ -84,51 +86,50 @@
                 @csrf
 
                 <fieldset>
-                    <legend class="labels">Name:</legend>
-                    <input type="text" name="name" placeholder="Enter your Name" class="input focused" id="name" required>
-                    <span id="nameError" class="error">Invalid input</span>
+                    <legend class="labels">Nama:</legend>
+                    <input type="text" name="name" placeholder="Masukkan Nama Anda" class="input focused" id="name" required>
+                    <span id="nameError" class="error">Input tidak valid</span>
                 </fieldset>
 
                 <fieldset>
-                    <legend class="labels">Phone:</legend>
-                    <input type="tel" name="phone" placeholder="Enter Phone" class="input focused" id="phone" required>
-                    <span id="phoneError" class="error">Invalid number</span>
+                    <legend class="labels">Telepon:</legend>
+                    <input type="tel" name="phone" placeholder="Masukkan Nomor Telepon" class="input focused" id="phone" required>
+                    <span id="phoneError" class="error">Nomor tidak valid</span>
                 </fieldset>
 
                 <fieldset>
                     <legend class="labels">Email:</legend>
-                    <input type="email" name="email" placeholder="Enter Email" class="input focused" id="email" required>
-                    <span id="emailError" class="error">Invalid email</span>
+                    <input type="email" name="email" placeholder="Masukkan Email" class="input focused" id="email" required>
+                    <span id="emailError" class="error">Email tidak valid</span>
                 </fieldset>
 
                 <fieldset>
-                    <legend class="labels">Request Date:</legend>
-                    <input type="date" name="date" placeholder="Date" class="input focused" id="date" required>
-                    <span id="dateError" class="error">Invalid date</span>
+                    <legend class="labels">Tanggal Reservasi:</legend>
+                    <input type="date" name="date" placeholder="Tanggal" class="input focused" id="date" required>
+                    <span id="dateError" class="error">Tanggal tidak valid</span>
                 </fieldset>
 
                 <fieldset>
-                    <legend class="labels">Request Time:</legend>
+                    <legend class="labels">Waktu Reservasi:</legend>
                     <select name="time" class="input focused" id="time" required>
-                        <option value="">Select Time</option>
-                        <option value="09:00">09:00 AM</option>
-                        <option value="10:00">10:00 AM</option>
-                        <option value="11:00">11:00 AM</option>
-                        <option value="12:00">12:00 PM</option>
-                        <option value="13:00">01:00 PM</option>
-                        <option value="14:00">02:00 PM</option>
-                        <option value="15:00">03:00 PM</option>
-                        <option value="16:00">04:00 PM</option>
-                        <option value="17:00">05:00 PM</option>
-                        <option value="18:00">06:00 PM</option>
+                        <option value="">Pilih Waktu</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
                     </select>
-                    <span id="timeError" class="error">Please select a time</span>
+                    <span id="timeError" class="error">Mohon pilih waktu</span>
                 </fieldset>
 
                 <fieldset>
-                    <legend class="labels">Service:</legend>
+                    <legend class="labels">Layanan:</legend>
                     <select name="service" class="input focused" id="select" required>
-                        <option value="">Please select a service</option>
+                        <option value="">Mohon pilih layanan</option>
                         <option value="Nail Art">Nail Art</option>
                         <option value="Remove Nail">Remove Nail</option>
                         <option value="Manicure">Manicure</option>
@@ -138,10 +139,10 @@
                         <option value="Remove Eyelash">Remove Eyelash</option>
                         <option value="Lashlift">Lashlift</option>
                     </select>
-                    <span id="selectError" class="error">You must select a service</span>
+                    <span id="selectError" class="error">Anda harus memilih layanan</span>
                 </fieldset>
 
-                <button type="submit" class="btn btn-blue cursor-pointer" id="bookBtn">Make Reservation</button>
+                <button type="submit" class="btn btn-blue cursor-pointer" id="bookBtn">Buat Reservasi</button>
                 
                 </form>
             </div>
@@ -152,7 +153,7 @@
             <div class="footer-bg"></div>
             <div class="grid-wrap">
                 <div class="footer-section">
-                    <h3 class="oswald-sans">Contact</h3>
+                    <h3 class="oswald-sans">Kontak</h3>
                     <ul class="open-sans">
                         <li>
                             <img src="images/map.jpg" alt="Location" class="contact-icons">
@@ -171,10 +172,10 @@
                 </div>
         
                 <div class="footer-section">
-                    <h3 class="oswald-sans">We are Open</h3>
+                    <h3 class="oswald-sans">Jam Buka</h3>
                     <ul class="open-sans">
-                        <li>Tuesday - Sunday 12 PM - 8 PM</li>
-                        <li>Monday Closed</li>
+                        <li>Selasa - Minggu 12.00 - 20.00</li>
+                        <li>Senin Tutup</li>
                     </ul>
                 </div>
             </div>
@@ -197,66 +198,11 @@
         <script src="js/global.js"></script>
         <script src="js/utils.js"></script>
         <script src="js/validation.js"></script>
+        <script src="js/navbar.js"></script>
         
-        <!-- Mobile Navigation Script -->
+        <!-- Form validation script -->
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('.menu');
-            const mobileNav = document.querySelector('.mobile-nav');
-            const body = document.body;
-
-            // Check if elements exist
-            if (!menuButton || !mobileNav) {
-                console.error('Menu button or mobile nav not found');
-                return;
-            }
-
-            // Fungsi untuk toggle menu
-            function toggleMenu() {
-                mobileNav.classList.toggle('active');
-                body.classList.toggle('menu-open');
-                
-                // Add visual feedback to menu button
-                menuButton.classList.toggle('active');
-            }
-
-            // Event listener untuk tombol menu
-            menuButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMenu();
-            });
-
-            // Event listener untuk link di mobile nav - tutup menu saat link diklik
-            const mobileNavLinks = mobileNav.querySelectorAll('a');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileNav.classList.remove('active');
-                    body.classList.remove('menu-open');
-                    menuButton.classList.remove('active');
-                });
-            });
-
-            // Tutup menu saat klik di luar area menu
-            document.addEventListener('click', function(e) {
-                if (mobileNav.classList.contains('active') && 
-                    !mobileNav.contains(e.target) && 
-                    !menuButton.contains(e.target)) {
-                    mobileNav.classList.remove('active');
-                    body.classList.remove('menu-open');
-                    menuButton.classList.remove('active');
-                }
-            });
-
-            // Tutup menu saat window di-resize ke desktop
-            window.addEventListener('resize', function() {
-                if (window.innerWidth >= 1024) {
-                    mobileNav.classList.remove('active');
-                    body.classList.remove('menu-open');
-                    menuButton.classList.remove('active');
-                }
-            });
-
             // Form validation improvements
             const form = document.getElementById('bookingForm');
             if (form) {
@@ -276,7 +222,7 @@
                     
                     if (!isValid) {
                         e.preventDefault();
-                        alert('Please fill in all required fields.');
+                        alert('Mohon isi semua field yang diperlukan.');
                     }
                 });
             }

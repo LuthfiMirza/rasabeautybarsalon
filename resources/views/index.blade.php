@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>RasaBeauty Bar | Home</title>
+        <title>RasaBeauty Bar | Beranda</title>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/whatsapp-contact.css">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -27,31 +28,39 @@
         <!--header-->
         <header>
             <div class="container-lg header-container">
-                <a href="index" class="cursor-pointer">
-                    
+                <!-- Logo -->
+                <a href="/" class="cursor-pointer logo">
+                    <img src="images/rasa.png" alt="RasaBeauty Bar Logo">
+                    <span>RasaBeauty<br><i>Bar</i></span>
                 </a>
-                <button type="button" class="menu vertical-center cursor-pointer"><img src="images/icons8-menu-48.png" alt="Menu"></button>
+                
+                <!-- Mobile Menu Button -->
+                <button type="button" class="menu vertical-center cursor-pointer">
+                    <img src="images/icons8-menu-48.png" alt="Menu">
+                </button>
+                
+                <!-- Desktop Navigation -->
                 <nav class="oswald-sans desktop-nav vertical-center">
                     <ul>
-                        <li class="link-animate"><a href="/">HOME</a></li>
-                        <li class="link-animate"><a href="/about">ABOUT</a></li>
-                        <li class="link-animate"><a href="/#servicesID">SERVICES</a></li>
-                        <li class="link-animate"><a href="/#contactID">CONTACT</a></li>
-                        <li><a href="/book" class="btn btn-blue">RESERVATION</a></li>
+                        <li class="link-animate"><a href="/">BERANDA</a></li>
+                        <li class="link-animate"><a href="/about">TENTANG</a></li>
+                        <li class="link-animate"><a href="/#servicesID">LAYANAN</a></li>
+                        <li class="link-animate"><a href="/#contactID">KONTAK</a></li>
+                        <li><a href="/book" class="btn btn-blue">RESERVASI</a></li>
                     </ul>
                 </nav>
 
+                <!-- Mobile Navigation -->
                 <nav class="mobile-nav">
                     <ul>
-                        <li><a href="/">HOME</a></li>
-                        <li><a href="/about">ABOUT</a></li>
-                        <li><a href="/#servicesID">SERVICES</a></li>
-                        <li><a href="/#contactID">CONTACT</a></li>
-                        <li><a href="/book" class="btn btn-blue">RESERVATION</a></li>
+                        <li><a href="/">BERANDA</a></li>
+                        <li><a href="/about">TENTANG</a></li>
+                        <li><a href="/#servicesID">LAYANAN</a></li>
+                        <li><a href="/#contactID">KONTAK</a></li>
+                        <li><a href="/book" class="btn btn-blue">RESERVASI</a></li>
                     </ul>
                 </nav>
             </div>
-           
         </header>
 
         <!--carousel-->
@@ -69,17 +78,17 @@
 
              <!--about-->
              <div class="section about">
-                <h1 class="title text-center">About Our Salon</h1>
+                <h1 class="title text-center">Tentang Salon Kami</h1>
                 <div class="divider"></div>
                 <div class="container-lg grid-wrap">
                     <img src="images/rbb1.jpg" class="img">
                     <div class="about-text">
-                        <p class="open-sans text-gray p-text">Welcome to RasaBeauty Bar Salon, where beauty meets elegance and self-care is celebrated in every detail. Located at the heart of Depok, our salon is a cozy and modern space designed to help you relax, feel confident, and express your unique style. We specialize in nail art, lash lift, eyelash extensions, and more all crafted with love and precision.</p>
+                        <p class="open-sans text-gray p-text">Selamat datang di RasaBeauty Bar Salon, tempat di mana kecantikan bertemu dengan keanggunan dan perawatan diri dirayakan dalam setiap detail. Berlokasi di jantung kota Depok, salon kami adalah ruang yang nyaman dan modern yang dirancang untuk membantu Anda rileks, merasa percaya diri, dan mengekspresikan gaya unik Anda. Kami mengkhususkan diri dalam nail art, lash lift, eyelash extensions, dan banyak lagi yang semuanya dibuat dengan cinta dan presisi.</p>
 
-                        <p class="open-sans text-gray p-text">Our mission is to enhance your natural beauty through safe, high-quality treatments tailored just for you. Every service is delivered by trained professionals who care about your comfort and satisfaction. Let us pamper you from fingertips to lashes. Because at RasaBeauty Bar Salon, every detail matters and you deserve to feel beautiful, every single day.</p>
+                        <p class="open-sans text-gray p-text">Misi kami adalah meningkatkan kecantikan alami Anda melalui perawatan yang aman dan berkualitas tinggi yang disesuaikan khusus untuk Anda. Setiap layanan diberikan oleh profesional terlatih yang peduli dengan kenyamanan dan kepuasan Anda. Biarkan kami memanjakan Anda dari ujung jari hingga bulu mata. Karena di RasaBeauty Bar Salon, setiap detail penting dan Anda layak merasa cantik, setiap hari.</p>
                         <a href="#showcaseID" class="back-to-top cursor-pointer">
                         </a>
-                        <a href="about" class="btn btn-white text-decoration text-center">READ MORE</a>
+                        <a href="about" class="btn btn-white text-decoration text-center">BACA SELENGKAPNYA</a>
                     </div>
                 </div>
             </div>
@@ -219,7 +228,7 @@
 
             <!--gallery-->
             <div class="section gallery">
-                <h1 class="title text-center">Gallery</h1>
+                <h1 class="title text-center">Galeri</h1>
                 <div class="divider"></div>
                 <div class="container-lg grid-wrap gallery-wrap flex">
                     <div class="flex">
@@ -251,37 +260,87 @@
             <div id="modalBackground" class="cursor-pointer"></div>
             <img src="" alt="Selected Image" class="center-all" id="image">
 
-            <!--book-->
-            
-
             <!--contact-->
             <div class="section contact" id="contactID">
-                <h1 class="title text-center">Contact Us</h1>
-                <div class="divider"></div>
-                <div class="grid-wrap">
-                    <form method="GET" action="{{ route('reservation.store') }}">
+                <div class="container-lg">
+                    <h1 class="title text-center">Hubungi Kami</h1>
+                    <div class="divider"></div>
                     
-
-                        <div>
-                            <span id="nameError" class="error">Invalid name</span>
-                            <input type="text" id="name" name="Name" placeholder="Enter Name" class="input focused">
-                            <span id="emailError" class="error">Invalid email</span>
-                            <input type="email" id="email" name="Email" placeholder="Enter Email" class="input focused">
-                            <span id="subjectError" class="error">Cannot be blank</span>
-                            <input type="text" id="subject" placeholder="Subject" class="input focused" name="Subject">
-                            <span id="messageError" class="error">Cannot be blank</span>
-                            <textarea id="message" placeholder="Enter Message" class="input focused" name="Message"></textarea>
-                            <button type="submit" name="submit" class="btn btn-blue2 text-center cursor-pointer" id="submit">SEND YOUR MESSAGE</button>
-
-                            <span class="submit-message"></span>
+                    <!-- Contact Methods -->
+                    <div class="contact-methods">
+                        <div class="contact-card whatsapp-card">
+                            <div class="contact-icon">
+                                <span>💬</span>
+                            </div>
+                            <h3 class="oswald-sans">WhatsApp</h3>
+                            <p class="open-sans">Chat langsung dengan kami</p>
+                            <a href="https://wa.me/6287816658903" target="_blank" class="contact-btn whatsapp-btn">
+                                087816658903
+                            </a>
                         </div>
-                    </form>
-                    <div class="map">
-                        <div class="container-lg">
+                        
+                        <div class="contact-card phone-card">
+                            <div class="contact-icon">
+                                <span>📞</span>
+                            </div>
+                            <h3 class="oswald-sans">Telepon</h3>
+                            <p class="open-sans">Hubungi kami langsung</p>
+                            <a href="tel:087816658903" class="contact-btn phone-btn">
+                                087816658903
+                            </a>
+                        </div>
+                        
+                        <div class="contact-card location-card">
+                            <div class="contact-icon">
+                                <span>📍</span>
+                            </div>
+                            <h3 class="oswald-sans">Lokasi</h3>
+                            <p class="open-sans">Kunjungi salon kami</p>
+                            <div class="location-info">
+                                <span>Ruko Alpiana No 21</span>
+                                <span>Jl. Boulevard, Depok</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card hours-card">
+                            <div class="contact-icon">
+                                <span>🕒</span>
+                            </div>
+                            <h3 class="oswald-sans">Jam Buka</h3>
+                            <p class="open-sans">Waktu operasional</p>
+                            <div class="hours-info">
+                                <span>Selasa - Minggu</span>
+                                <span>12.00 - 20.00</span>
+                                <small>Senin Tutup</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Contact Form -->
+                    <div class="quick-contact">
+                        <h3 class="oswald-sans text-center">Kirim Pesan Cepat</h3>
+                        <form id="quickContactForm" class="quick-form">
+                            <div class="form-row">
+                                <input type="text" id="quickName" placeholder="Nama Anda" class="quick-input" required>
+                                <input type="tel" id="quickPhone" placeholder="Nomor WhatsApp" class="quick-input" required>
+                            </div>
+                            <textarea id="quickMessage" placeholder="Pesan Anda..." class="quick-textarea" rows="3" required></textarea>
+                            <button type="submit" class="quick-submit-btn">
+                                <span>📱</span>
+                                Kirim via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Map Section -->
+                    <div class="modern-map-section">
+                        <h3 class="oswald-sans text-center">Temukan Kami</h3>
+                        <div class="map-container">
                             <div id="mapid"></div>
                         </div>
                     </div>
                 </div>
+                
                 <script>
                     var mymap = L.map('mapid').setView([-6.418861, 106.825972], 15);
                 
@@ -290,10 +349,9 @@
                     }).addTo(mymap);
                 
                     L.marker([-6.418861, 106.825972]).addTo(mymap)
-                        .bindPopup('Lokasi Kami di Sini')
+                        .bindPopup('<strong>RasaBeauty Bar</strong><br>Ruko Alpiana No 21<br>Jalan Boulevard, Kota Depok')
                         .openPopup();
                 </script>
-                
             </div>
 
         </main>
@@ -305,19 +363,19 @@
             <div class="footer-bg"></div>
             <div class="grid-wrap">
                 <div class="footer-section">
-                    <h3 class="oswald-sans">Contact</h3>
+                    <h3 class="oswald-sans">Kontak</h3>
                     <ul class="open-sans">
                         <li><img src="images/map.jpg" alt="Location" class="contact-icons">Ruko Alpiana No 21</br><span>Jalan Boulevard, Kota Depok Jawa Barat</span></li>
-                        <li><img src="images/tlfn.jpg" alt="Phone" class="contact-icons"><a href="tel:484-329-7989" id="phone-number">087816658903</a></li>
+                        <li><img src="images/tlfn.jpg" alt="Phone" class="contact-icons"><a href="tel:087816658903" id="phone-number">087816658903</a></li>
                         <li class="oswald-sans"><img src="images/ig.png" alt="insta" class="contact-icons"><a href="https://www.instagram.com/rasabeautybar?igsh=NXZxZWszZmIzbWJr" id="email-link">@rasabeautybar</a></li>
                        
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3 class="oswald-sans">We are Open</h3>
+                    <h3 class="oswald-sans">Jam Buka</h3>
                     <ul class="open-sans">
-                        <li>Tuesday - Sunday 12 PM - 8 PM</li>
-                        <li>Monday Closed</li>
+                        <li>Selasa - Minggu 12.00 - 20.00</li>
+                        <li>Senin Tutup</li>
                     </ul>
                 </div>
                
@@ -347,77 +405,31 @@
         crossorigin=""></script>
         
 
+<script src="js/navbar.js"></script>
+<script src="js/whatsapp-contact.js"></script>
+
 <script>
+// Quick Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.querySelector('.menu');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const body = document.body;
-
-    // Fungsi untuk toggle menu
-    function toggleMenu() {
-        mobileNav.classList.toggle('active');
-        body.classList.toggle('menu-open');
-    }
-
-    // Event listener untuk tombol menu
-    menuButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMenu();
-    });
-
-    // Event listener untuk link di mobile nav - tutup menu saat link diklik
-    const mobileNavLinks = mobileNav.querySelectorAll('a');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
-            body.classList.remove('menu-open');
-        });
-    });
-
-    // Tutup menu saat klik di luar area menu
-    document.addEventListener('click', function(e) {
-        if (mobileNav.classList.contains('active') && 
-            !mobileNav.contains(e.target) && 
-            !menuButton.contains(e.target)) {
-            mobileNav.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
-
-    // Tutup menu saat window di-resize ke desktop
-    window.addEventListener('resize', function() {
-        if (window.innerWidth >= 1024) {
-            mobileNav.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
-});
-</script>
-
-<script>
-
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const modal = this.closest('.service-modal');
-            modal.style.display = 'none';
-        });
-    });
-
-    window.addEventListener('click', function(e) {
-        modals.forEach(modal => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
+    const quickForm = document.getElementById('quickContactForm');
+    if (quickForm) {
+        quickForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('quickName').value;
+            const phone = document.getElementById('quickPhone').value;
+            const message = document.getElementById('quickMessage').value;
+            
+            if (name && phone && message) {
+                const waMessage = `Halo, saya ${name}. ${message}`;
+                const waLink = `https://wa.me/6287816658903?text=${encodeURIComponent(waMessage)}`;
+                window.open(waLink, '_blank');
             }
         });
-    });
-</script>
+    }
+});
 
-
-    </body>
-</html>
-
-<script>
+// Service buttons functionality
 document.addEventListener('DOMContentLoaded', function() {
     const serviceButtons = document.querySelectorAll('.services .service-item button');
 
@@ -460,8 +472,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-</script>
-<script>
+
+// Back to top functionality
 document.addEventListener('DOMContentLoaded', function() {
     var backToTop = document.querySelector('.back-to-top');
     
@@ -482,13 +494,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<script>
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) { // Ubah angka ini sesuai kebutuhan
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-</script>
+
+    </body>
+</html>
