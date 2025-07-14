@@ -36,8 +36,8 @@
                 </a>
                 
                 <!-- Mobile Menu Button -->
-                <button type="button" class="menu vertical-center cursor-pointer">
-                    <img src="images/icons8-menu-48.png" alt="Menu">
+                <button class="menu" type="button" aria-label="Toggle menu" aria-expanded="false">
+                    <img src="images/menu.png" alt="Menu">
                 </button>
                 
                 <!-- Desktop Navigation -->
@@ -408,7 +408,29 @@
 
 <script src="js/navbar.js"></script>
 <script src="js/whatsapp-contact.js"></script>
-
+<script>
+// Quick fix untuk memastikan CSS sudah load
+document.addEventListener('DOMContentLoaded', function() {
+    // Force apply critical styles
+    const menu = document.querySelector('.menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    
+    if (menu) {
+        menu.style.position = 'fixed';
+        menu.style.top = '20px';
+        menu.style.right = '20px';
+        menu.style.zIndex = '99999';
+        menu.style.transform = 'none';
+    }
+    
+    if (mobileNav) {
+        mobileNav.style.position = 'fixed';
+        mobileNav.style.top = '0';
+        mobileNav.style.left = '-300px';
+        mobileNav.style.zIndex = '99998';
+    }
+});
+</script>
 <script>
 // Quick Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {

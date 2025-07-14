@@ -36,33 +36,43 @@ document.addEventListener('DOMContentLoaded', function() {
      * Open mobile menu
      */
     function openMenu() {
+        // Store current scroll position
+        const scrollY = window.scrollY;
+        body.dataset.scrollY = scrollY;
+        
+        // Add classes
         mobileNav.classList.add('active');
         body.classList.add('menu-open');
         menuButton.classList.add('active');
         
         // Prevent body scroll on mobile
-        const scrollY = window.scrollY;
         body.style.position = 'fixed';
         body.style.top = `-${scrollY}px`;
         body.style.width = '100%';
+        body.style.left = '0';
     }
 
     /**
      * Close mobile menu
      */
     function closeMenu() {
+        // Remove classes
         mobileNav.classList.remove('active');
         body.classList.remove('menu-open');
         menuButton.classList.remove('active');
         
         // Restore body scroll position
-        const scrollY = body.style.top;
+        const scrollY = body.dataset.scrollY || '0';
         body.style.position = '';
         body.style.top = '';
         body.style.width = '';
-        if (scrollY) {
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        }
+        body.style.left = '';
+        
+        // Restore scroll position
+        window.scrollTo(0, parseInt(scrollY));
+        
+        // Clean up
+        delete body.dataset.scrollY;
     }
 
     // Unified event handler for both click and touch

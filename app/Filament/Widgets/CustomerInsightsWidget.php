@@ -34,13 +34,8 @@ class CustomerInsightsWidget extends BaseWidget
             ->whereYear('date', Carbon::now()->year)
             ->count() / Carbon::now()->day;
 
-        // Jam tersibuk
-        $peakHour = Reservation::whereMonth('date', Carbon::now()->month)
-            ->whereYear('date', Carbon::now()->year)
-            ->select('time', DB::raw('count(*) as total'))
-            ->groupBy('time')
-            ->orderBy('total', 'desc')
-            ->first();
+        
+
 
         // Customer baru bulan ini (berdasarkan email unik)
         $newCustomers = Reservation::whereMonth('created_at', Carbon::now()->month)
@@ -58,35 +53,22 @@ class CustomerInsightsWidget extends BaseWidget
         $retentionRate = $totalUniqueCustomers > 0 ? ($repeatCustomers / $totalUniqueCustomers) * 100 : 0;
 
         return [
-            Stat::make('Customer Teratas', $topCustomer ? $topCustomer->name : 'Belum ada data')
-                ->description($topCustomer ? "{$topCustomer->total} reservasi" : 'Tidak ada reservasi')
-                ->descriptionIcon('heroicon-m-user-circle')
-                ->color('success'),
 
             Stat::make('Layanan Terpopuler', $popularService ? $popularService->service : 'Belum ada data')
                 ->description($popularService ? "{$popularService->total} kali dipilih bulan ini" : 'Tidak ada data')
                 ->descriptionIcon('heroicon-m-star')
                 ->color('warning'),
 
-            Stat::make('Rata-rata Harian', number_format($avgDaily, 1))
-                ->description('Reservasi per hari bulan ini')
-                ->descriptionIcon('heroicon-m-calendar-days')
-                ->color('info'),
+            
 
-            Stat::make('Jam Tersibuk', $peakHour ? $peakHour->time : 'Belum ada data')
-                ->description($peakHour ? "{$peakHour->total} reservasi bulan ini" : 'Tidak ada data')
-                ->descriptionIcon('heroicon-m-clock')
-                ->color('danger'),
+
 
             Stat::make('Customer Baru', $newCustomers)
                 ->description('Bulan ini')
                 ->descriptionIcon('heroicon-m-user-plus')
                 ->color('primary'),
 
-            Stat::make('Tingkat Retensi', number_format($retentionRate, 1) . '%')
-                ->description("{$repeatCustomers} dari {$totalUniqueCustomers} customer kembali")
-                ->descriptionIcon('heroicon-m-arrow-path')
-                ->color($retentionRate > 50 ? 'success' : ($retentionRate > 25 ? 'warning' : 'danger')),
+            
         ];
     }
 }
