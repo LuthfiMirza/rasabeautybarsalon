@@ -13,7 +13,7 @@ $(document).ready(function() {
         }
 
         // reveal button takes you back to top
-        if (top > 300) {
+        if (top > 100) {
             $(".back-to-top").addClass("active");
         } else {
             $(".back-to-top").removeClass("active");

@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/other.css">
-        <link rel="stylesheet" href="css/mobile-nav-fix.css">
-        <link rel="stylesheet" href="css/mobile-nav-simple.css">
+        <link rel="stylesheet" href="css/mobile-nav-improved.css">
         <link rel="stylesheet" href="css/breadcrumb-white.css">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
@@ -140,7 +139,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
                 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
                 crossorigin="anonymous"></script>
+        <script src="js/navbar.js"></script>
         <script src="js/global.js"></script>
-        <script src="js/mobile-nav-simple.js"></script>
     </body>
 </html>

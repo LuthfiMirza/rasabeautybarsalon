@@ -65,20 +65,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Event listener for menu button
-    menuButton.addEventListener('click', function(e) {
+    // Unified event handler for both click and touch
+    let touchStarted = false;
+
+    // Touch events for mobile devices
+    menuButton.addEventListener('touchstart', function(e) {
+        touchStarted = true;
         e.preventDefault();
         e.stopPropagation();
-        console.log('Menu button clicked'); // Debug log
+        // console.log('Menu button touched'); // Debug log
+    });
+
+    menuButton.addEventListener('touchend', function(e) {
+        if (touchStarted) {
+            e.preventDefault();
+            e.stopPropagation();
+            // console.log('Menu button touch ended'); // Debug log
+            toggleMenu();
+            touchStarted = false;
+        }
+    });
+
+    // Click event for desktop and as fallback
+    menuButton.addEventListener('click', function(e) {
+        // Prevent double triggering on touch devices
+        if (touchStarted) {
+            return;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+        // console.log('Menu button clicked'); // Debug log
         toggleMenu();
     });
 
-    // Touch event for mobile devices
-    menuButton.addEventListener('touchstart', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Menu button touched'); // Debug log
-        toggleMenu();
+    // Reset touch state if touch is cancelled
+    menuButton.addEventListener('touchcancel', function(e) {
+        touchStarted = false;
     });
 
     // Event listener for mobile nav links - close menu when link is clicked
