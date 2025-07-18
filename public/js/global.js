@@ -7,9 +7,9 @@ $(document).ready(function() {
         
         // header
         if (top > 1) {
-            $("header").css({"top": "0", "background": "#000"});
+            $("header").css({"top": "0", "background": "rgba(249, 193, 225, 0.95)"});
         } else {
-            $("header").css({"top": "0px", "background": "transparent"});
+            $("header").css({"top": "0px", "background": "rgba(249, 193, 225, 0.9)"});
         }
 
         // reveal button takes you back to top
