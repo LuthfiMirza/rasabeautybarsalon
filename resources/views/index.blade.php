@@ -37,7 +37,7 @@
                 
                 <!-- Mobile Menu Button -->
                 <button class="menu" type="button" aria-label="Toggle menu" aria-expanded="false">
-                    <img src="images/menu.png" alt="Menu">
+                    <img src="images/icons8-menu-48.png" alt="Menu">
                 </button>
                 
                 <!-- Desktop Navigation -->
@@ -103,54 +103,53 @@
                 <div class="divider"></div>
                 <div class="grid-wrap">
                    <div class="service-item">
-                    <h1 class="playfair-serif light text-center">NAIL ART</h1>
-                    <p class="open-sans p-text text-center">Shiny nails, happy heart! a touch of color, a spark of joy, and a boost of confidence all in one.</p>
-            
-            
-                       <div class="table-wrap" style="max-height: none; opacity: 1; margin: 20px 0;">
-                        <table class="oswald-sans blue-table">
-                            <tr>
-                                <td>Menicure + Nail art all Design</td>
-                                <td>125 K</td>
-                            </tr>
-                            <tr>
-                                <td>Nail Extentsion</td>
-                                <td>160 K</td>
-                            </tr>
-                            <tr>
-                                <td>Pollygel Extentsion</td>
-                                <td>300 K</td>
-                            </tr>
-                            <tr>
-                                <td>Art Extentsion</td>
-                                <td>3-30 K</td>
-                            </tr>
-                            <tr>
-                                <td>Aksesoris Nail Premium</td>
-                                <td>5-30 K/Finger</td>
-                            </tr>
-                            <tr>
-                                <td>Remove Nail</td>
-                                <td>5 K/Finger</td>
-                            </tr>
-                            <tr>
-                                <td>Remove Extentsion</td>
-                                <td>10 K/Finger</td>
-                            </tr>
-                            <tr>
-                                <td>Embossed Flower</td>
-                                <td>5 K/Petals</td>
-                            </tr>
-                            <tr>
-                                <td>Nail Serum</td>
-                                <td>100 K</td>
-                            </tr>
-               
-                        </table>
+                       <h1 class="playfair-serif light text-center">NAIL ART</h1>
+                       <p class="open-sans p-text text-center">Shiny nails, happy heart! a touch of color, a spark of joy, and a boost of confidence all in one.</p>
+
+                       <div class="table-wrap">
+                           <table class="oswald-sans blue-table">
+                               <tr>
+                                   <td>Menicure + Nail art all Design</td>
+                                   <td>125 K</td>
+                               </tr>
+                               <tr>
+                                   <td>Nail Extentsion</td>
+                                   <td>160 K</td>
+                               </tr>
+                               <tr>
+                                   <td>Pollygel Extentsion</td>
+                                   <td>300 K</td>
+                               </tr>
+                               <tr>
+                                   <td>Art Extentsion</td>
+                                   <td>3-30 K</td>
+                               </tr>
+                               <tr>
+                                   <td>Aksesoris Nail Premium</td>
+                                   <td>5-30 K/Finger</td>
+                               </tr>
+                               <tr>
+                                   <td>Remove Nail</td>
+                                   <td>5 K/Finger</td>
+                               </tr>
+                               <tr>
+                                   <td>Remove Extentsion</td>
+                                   <td>10 K/Finger</td>
+                               </tr>
+                               <tr>
+                                   <td>Embossed Flower</td>
+                                   <td>5 K/Petals</td>
+                               </tr>
+                               <tr>
+                                   <td>Nail Serum</td>
+                                   <td>100 K</td>
+                               </tr>
+                           </table>
                        </div>
-            
-            
-                       <button type="button" class="oswald-sans read-more-btn">READ MORE</button>
+
+                       <div class="text-center">
+                           <button type="button" class="oswald-sans service-btn" data-service="nailart">READ MORE</button>
+                       </div>
                    </div>
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">MENICURE PEDICURE</h1>
@@ -174,7 +173,9 @@
                         </table>
                        </div>
 
-                       <button type="button" class="oswald-sans service-btn" data-service="menicure">READ MORE</button>
+                       <div class="text-center">
+                           <button type="button" class="oswald-sans service-btn" data-service="menicure">READ MORE</button>
+                       </div>
                    </div>
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">EYELASH</h1>
@@ -206,7 +207,9 @@
                         </table>
                        </div>
 
-                       <button type="button" class="oswald-sans service-btn" data-service="eyelash">READ MORE</button>
+                       <div class="text-center">
+                           <button type="button" class="oswald-sans service-btn" data-service="eyelash">READ MORE</button>
+                       </div>
                    </div>
                    <div class="service-item">
                        <h1 class="playfair-serif light text-center">LASHLIFT</h1>
@@ -222,7 +225,9 @@
                         </table>
                        </div>
 
-                       <button type="button" class="oswald-sans service-btn" data-service="lashlift">READ MORE</button>
+                       <div class="text-center">
+                           <button type="button" class="oswald-sans service-btn" data-service="lashlift">READ MORE</button>
+                       </div>
                    </div>
                 </div>
             </div>
